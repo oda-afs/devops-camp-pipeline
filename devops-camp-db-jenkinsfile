@@ -39,6 +39,7 @@ pipeline {
                   steps {
                       echo "Building database image"
                       //TODO: build docker image & push to Harbor
+                      //Comment One
                       withCredentials([usernameColonPassword(credentialsId: 'osasaimufua-harbor-auth', variable: 'HARBOR-AUTH')]) {
                           script {
                               sh 'docker build -t $DB_IMAGE_NAME-$COMMIT_HASH -f ./db/Dockerfile ./afs-labs-student'
